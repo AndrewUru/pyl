@@ -1,15 +1,11 @@
-import { Settings2 } from "lucide-react";
+import type { Metadata } from "next";
 
-import { FeatureEmptyPage } from "@/components/feature-empty-page";
+import { BackupSettings } from "@/features/settings/components/backup-settings";
+
+export const metadata: Metadata = {
+  title: "Configuración | PYL",
+};
 
 export default function ConfiguracionPage() {
-  return (
-    <FeatureEmptyPage
-      title="Configuración"
-      description="Ajusta los datos de empresa, impuestos y criterios de cálculo."
-      emptyTitle="Preferencias listas para personalizar"
-      emptyDescription="En la próxima fase podrás configurar empresa, merma predeterminada, margen e IVA."
-      icon={Settings2}
-    />
-  );
+  return <BackupSettings />;
 }
