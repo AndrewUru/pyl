@@ -1,10 +1,15 @@
+import { FolderKanban } from "lucide-react";
+
+import { FeatureEmptyPage } from "@/components/feature-empty-page";
+
 export default function ProyectosPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Gestión de Proyectos</h1>
-      <p className="mt-2 text-gray-600">
-        Controla el estado de tus obras: pendiente, en curso o entregado.
-      </p>
-    </div>
+    <FeatureEmptyPage
+      title="Proyectos"
+      description="Organiza obras, clientes, mediciones y documentación técnica."
+      emptyTitle="Todavía no hay proyectos"
+      emptyDescription="Cuando crees tu primer proyecto podrás centralizar aquí su estado, mediciones y presupuestos."
+      icon={FolderKanban}
+    />
   );
 }

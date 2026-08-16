@@ -1,10 +1,15 @@
+import { Users } from "lucide-react";
+
+import { FeatureEmptyPage } from "@/components/feature-empty-page";
+
 export default function ClientesPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Gestión de Clientes</h1>
-      <p className="mt-2 text-gray-600">
-        Administra datos de clientes, CIF/NIF y direcciones de obra.
-      </p>
-    </div>
+    <FeatureEmptyPage
+      title="Clientes"
+      description="Mantén los datos de contacto y la relación con cada obra."
+      emptyTitle="Aún no hay clientes"
+      emptyDescription="Los clientes y empresas que añadas quedarán almacenados localmente en este dispositivo."
+      icon={Users}
+    />
   );
 }

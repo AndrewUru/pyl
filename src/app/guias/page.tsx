@@ -1,10 +1,15 @@
+import { BookOpen } from "lucide-react";
+
+import { FeatureEmptyPage } from "@/components/feature-empty-page";
+
 export default function GuiasPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Guías y Buenas Prácticas</h1>
-      <p className="mt-2 text-gray-600">
-        Consulta fichas técnicas, tutoriales y consejos de instalación.
-      </p>
-    </div>
+    <FeatureEmptyPage
+      title="Guías"
+      description="Consulta criterios de montaje, sistemas y buenas prácticas PYL."
+      emptyTitle="Biblioteca técnica en preparación"
+      emptyDescription="Las fichas y referencias especializadas se organizarán aquí para su consulta rápida."
+      icon={BookOpen}
+    />
   );
 }

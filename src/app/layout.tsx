@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+
+import { AppShell } from "@/components/layout/app-shell";
+
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 
 export const metadata: Metadata = {
-  title: "PYL Calculator",
-  description: "Gestión de proyectos y cálculos para Placa de Yeso Laminado",
+  title: {
+    default: "PYL Workspace",
+    template: "%s · PYL",
+  },
+  description:
+    "Gestión técnica de proyectos, mediciones y presupuestos de Placa de Yeso Laminado.",
 };
 
 export default function RootLayout({
@@ -13,10 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
-      <body className="bg-gray-100 text-gray-900">
-        <Navbar />
-        <main className="p-6">{children}</main>
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="font-sans antialiased">
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
