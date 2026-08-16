@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Menu, Search, Settings2, Sparkles } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonClassName } from "@/components/ui/button";
 
 interface AppHeaderProps {
   title: string;
@@ -62,17 +62,14 @@ export function AppHeader({
         >
           <Search aria-hidden="true" className="size-[18px]" />
         </Button>
-        <Button
-          variant="outline"
-          size="default"
-          disabled
-          aria-label="PYL Copilot, próximamente"
-          title="PYL Copilot estará disponible próximamente"
-          className="max-sm:!hidden"
+        <Link
+          href="/copilot"
+          aria-label="Abrir PYL Copilot"
+          className={`${buttonClassName({ variant: "outline" })} max-sm:!hidden`}
         >
           <Sparkles aria-hidden="true" className="size-3.5" />
           Copilot
-        </Button>
+        </Link>
         <Link
           href="/configuracion"
           aria-label="Abrir configuración"

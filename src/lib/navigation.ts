@@ -6,6 +6,7 @@ import {
   PackageSearch,
   ReceiptText,
   Settings2,
+  Sparkles,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -20,6 +21,7 @@ export const mainNavigation: NavigationItem[] = [
   { href: "/", label: "Inicio", icon: LayoutDashboard },
   { href: "/proyectos", label: "Proyectos", icon: FolderKanban },
   { href: "/calculadora", label: "Calculadora", icon: Calculator },
+  { href: "/copilot", label: "PYL Copilot", icon: Sparkles },
   { href: "/presupuestos", label: "Presupuestos", icon: ReceiptText },
   { href: "/clientes", label: "Clientes", icon: Users },
   { href: "/materiales", label: "Materiales", icon: PackageSearch },

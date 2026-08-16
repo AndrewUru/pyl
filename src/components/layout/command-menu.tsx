@@ -127,7 +127,7 @@ export function CommandMenu({ open, onClose }: CommandMenuProps) {
 
         <div className="flex items-center gap-2 border-t border-border bg-surface-muted/60 px-4 py-3 text-[11px] text-muted-foreground">
           <Sparkles aria-hidden="true" className="size-3.5" />
-          PYL Copilot se incorporará aquí en una próxima fase.
+          PYL Copilot ya puede operar el motor de cálculo de tabiques.
         </div>
       </div>
     </div>

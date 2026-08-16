@@ -574,6 +574,15 @@ Inicia el entorno de desarrollo:
 npm run dev
 ```
 
+Para activar PYL Copilot en local, crea un archivo `.env.local`:
+
+```bash
+AI_GATEWAY_API_KEY=tu_clave_de_ai_gateway
+# Opcional: PYL_AI_MODEL=openai/gpt-5.4-mini
+```
+
+Sin esta variable, la aplicación local-first, IndexedDB y la calculadora manual siguen funcionando con normalidad.
+
 Abre:
 
 ```text
