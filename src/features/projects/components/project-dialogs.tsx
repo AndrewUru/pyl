@@ -4,7 +4,7 @@ import { useId, useState, type FormEvent } from "react";
 import { LoaderCircle, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Dialog } from "@/components/ui/dialog";
+import { AppDialog as Dialog } from "@/components/ui/dialog";
 import {
   PROJECT_STATUSES,
   PROJECT_STATUS_LABELS,

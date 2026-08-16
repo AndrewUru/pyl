@@ -17,7 +17,7 @@ import {
 
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
-import { Dialog } from "@/components/ui/dialog";
+import { AppDialog as Dialog } from "@/components/ui/dialog";
 import type {
   BackupImportMode,
   BackupSummary,
