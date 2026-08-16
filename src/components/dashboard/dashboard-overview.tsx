@@ -56,6 +56,10 @@ function formatDate(value: string): string {
   return Number.isNaN(date.getTime()) ? "Sin fecha" : dateFormatter.format(date);
 }
 
+function getCalculationLabel(type: string): string {
+  return type === "partition" ? "Tabique PYL" : type;
+}
+
 function LoadingRows() {
   return (
     <div className="space-y-1 p-2" aria-label="Cargando datos">
@@ -135,7 +139,7 @@ export function DashboardOverview() {
     })),
     ...calculations.map((calculation) => ({
       id: `calculation-${calculation.id}`,
-      title: calculation.type,
+      title: getCalculationLabel(calculation.type),
       context: "Cálculo realizado",
       date: calculation.createdAt,
     })),
@@ -343,7 +347,7 @@ export function DashboardOverview() {
                     </RowIcon>
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-foreground">
-                        {calculation.type}
+                        {getCalculationLabel(calculation.type)}
                       </p>
                       <p className="mt-0.5 text-[11px] text-muted-foreground">
                         Creado {formatDate(calculation.createdAt)}
