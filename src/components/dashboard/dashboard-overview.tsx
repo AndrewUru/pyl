@@ -27,7 +27,10 @@ import {
   useProjects,
 } from "@/hooks/use-local-collections";
 import { cn } from "@/lib/utils";
-import type { ProjectStatus } from "@/types/entities";
+import {
+  PROJECT_STATUS_LABELS,
+  type ProjectStatus,
+} from "@/domain/projects";
 
 const currencyFormatter = new Intl.NumberFormat("es-ES", {
   style: "currency",
@@ -39,12 +42,7 @@ const dateFormatter = new Intl.DateTimeFormat("es-ES", {
   month: "short",
 });
 
-const statusLabels: Record<ProjectStatus, string> = {
-  pending: "Pendiente",
-  in_progress: "En curso",
-  delivered: "Entregado",
-  archived: "Archivado",
-};
+const statusLabels: Record<ProjectStatus, string> = PROJECT_STATUS_LABELS;
 
 interface ActivityEntry {
   id: string;
@@ -110,7 +108,7 @@ export function DashboardOverview() {
 
   const activeProjects = projects.filter(
     (project) =>
-      project.status === "pending" || project.status === "in_progress",
+      project.status === "draft" || project.status === "active",
   );
   const recentProjects = [...activeProjects]
     .sort((left, right) => right.updatedAt.localeCompare(left.updatedAt))
@@ -188,7 +186,7 @@ export function DashboardOverview() {
         <StatCard
           label="Proyectos activos"
           value={activeProjects.length}
-          helper="Pendientes o en curso"
+          helper="Borradores o en curso"
           icon={FolderKanban}
           isLoading={projectsLoading}
         />
@@ -237,7 +235,7 @@ export function DashboardOverview() {
                 {recentProjects.map((project) => (
                   <Link
                     key={project.id}
-                    href="/proyectos"
+                    href={`/proyectos/${project.id}`}
                     className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-muted/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring sm:px-5"
                   >
                     <RowIcon>
@@ -262,7 +260,7 @@ export function DashboardOverview() {
                 compact
                 icon={FolderKanban}
                 title="Sin proyectos activos"
-                description="Los proyectos pendientes o en curso aparecerán aquí."
+                description="Los proyectos en borrador o activos aparecerán aquí."
               />
             )}
           </section>

@@ -7,15 +7,12 @@ import type {
   MoneyInCents,
   Percentage,
 } from "@/domain/pricing";
+import type { ProjectStatus } from "@/domain/projects";
+
+export type { ProjectStatus } from "@/domain/projects";
 
 export type EntityId = string;
 export type IsoDateString = string;
-
-export type ProjectStatus =
-  | "pending"
-  | "in_progress"
-  | "delivered"
-  | "archived";
 
 export interface Project {
   id: EntityId;

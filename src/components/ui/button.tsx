@@ -2,7 +2,12 @@ import type { ButtonHTMLAttributes } from "react";
 
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "ghost"
+  | "outline"
+  | "destructive";
 type ButtonSize = "sm" | "default" | "icon";
 
 interface ButtonStyleOptions {
@@ -18,6 +23,8 @@ const variantClasses: Record<ButtonVariant, string> = {
   ghost: "text-muted-foreground hover:bg-surface-muted hover:text-foreground",
   outline:
     "border border-border bg-transparent text-foreground hover:bg-surface-muted",
+  destructive:
+    "bg-red-600 text-white shadow-sm hover:bg-red-700 focus-visible:ring-red-500",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
