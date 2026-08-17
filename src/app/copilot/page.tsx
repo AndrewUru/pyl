@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   title: "PYL Copilot",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function CopilotPage() {
   const configured = isPylCopilotConfigured();
 

@@ -184,6 +184,7 @@ export function CopilotWorkspace({
               size="icon-sm"
               aria-label="Nueva conversación"
               title="Nueva conversación"
+              disabled={isBusy}
               onClick={() => setMessages([])}
             >
               <RotateCcw aria-hidden="true" className="size-3.5" />
